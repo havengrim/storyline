@@ -175,7 +175,7 @@ const handleClick = () => {
           </motion.div>
 
           {/* Show the door after bedroom messages */}
-          {isDoorVisible && (
+          {isDoorVisible &&  (
             <div className='flex flex-col gap-5'>
               <motion.img
                 src={doorImage}
@@ -218,7 +218,7 @@ const handleClick = () => {
           )}
 
           {/* Ensure door is always visible in the hallway */}
-          {isDoorVisible && (
+          {isDoorVisible && showClickDoorText && (
             <motion.div
               className="absolute flex flex-col items-center bottom-20 left-1/2 transform -translate-x-1/2"
               onClick={handleClick}
@@ -235,6 +235,11 @@ const handleClick = () => {
               </Link>
               <h1 className='text-white text-2xl mt-2'>Click to continue</h1>
             </motion.div>
+          )}
+          {isFinalHallwayMessageDisplayed && (
+            <Link to="/final">
+              <h1 className='absolute text-white text-3xl bottom-10 left-1/2 transform -translate-x-1/2'></h1>
+            </Link>
           )}
         </motion.div>
       )}
